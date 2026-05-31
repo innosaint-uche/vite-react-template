@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Home, FileText, Users, CreditCard, BookOpen, MapPin, Bell, Settings, LogOut, Shield, BarChart2, CheckSquare, Briefcase, UserCheck, MessageSquare, PieChart, DollarSign, Gavel, ChevronLeft } from 'lucide-react';
+import { Home, FileText, Users, CreditCard, BookOpen, MapPin, Bell, Settings, LogOut, Shield, BarChart2, CheckSquare, Briefcase, UserCheck, MessageSquare, PieChart, DollarSign, Gavel, ChevronLeft, Sparkles } from 'lucide-react';
 import LegaliLogo from '../ui/LegaliLogo';
 import { useAuthStore } from '../../store/authStore';
 import type { UserRole } from '../../types';
@@ -18,6 +18,7 @@ const customerLinks = [
   { to: '/customer/messages', icon: MessageSquare, label: 'Messages' },
   { to: '/customer/knowledge', icon: BookOpen, label: 'Legal Knowledge' },
   { to: '/customer/calculator', icon: DollarSign, label: 'Fee Calculator' },
+  { to: '/customer/ask-legali', icon: Sparkles, label: 'Ask Legali AI' },
   { to: '/customer/notifications', icon: Bell, label: 'Notifications', badge: 3 },
   { to: '/customer/settings', icon: Settings, label: 'Settings' },
 ];

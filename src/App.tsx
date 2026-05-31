@@ -12,14 +12,20 @@ import CustomerDashboard from './pages/customer/Dashboard';
 import Insurance from './pages/customer/Insurance';
 import Immediate from './pages/customer/Immediate';
 import Cases from './pages/customer/Cases';
+import CaseDetail from './pages/customer/CaseDetail';
 import FindLawyer from './pages/customer/FindLawyer';
 import Calculator from './pages/customer/Calculator';
 import Knowledge from './pages/customer/Knowledge';
 import Messages from './pages/customer/Messages';
+import Notifications from './pages/customer/Notifications';
+import CustomerSettings from './pages/customer/Settings';
+import AskLegali from './pages/customer/AskLegali';
 
 // Lawyer pages
 import LawyerDashboard from './pages/lawyer/Dashboard';
 import Earnings from './pages/lawyer/Earnings';
+import LawyerProfile from './pages/lawyer/Profile';
+import Schedule from './pages/lawyer/Schedule';
 
 // Admin pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -29,6 +35,7 @@ import AdminCases from './pages/admin/Cases';
 import AdminPayments from './pages/admin/Payments';
 import Analytics from './pages/admin/Analytics';
 import AdminContent from './pages/admin/Content';
+import AdminSettings from './pages/admin/Settings';
 
 import Placeholder from './pages/Placeholder';
 
@@ -57,25 +64,26 @@ export default function App() {
           <Route path="insurance" element={<Insurance />} />
           <Route path="immediate" element={<Immediate />} />
           <Route path="cases" element={<Cases />} />
-          <Route path="cases/:id" element={<Placeholder title="Case Details" desc="Full case timeline, messages, and documents" />} />
+          <Route path="cases/:id" element={<CaseDetail />} />
           <Route path="find-lawyer" element={<FindLawyer />} />
           <Route path="messages" element={<Messages />} />
           <Route path="knowledge" element={<Knowledge />} />
           <Route path="calculator" element={<Calculator />} />
-          <Route path="notifications" element={<Placeholder title="Notifications" desc="All your alerts, case updates, and messages" />} />
-          <Route path="settings" element={<Placeholder title="Account Settings" desc="Profile, security, preferences, and notifications" />} />
+          <Route path="ask-legali" element={<AskLegali />} />
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="settings" element={<CustomerSettings />} />
         </Route>
 
         {/* Lawyer */}
         <Route path="/lawyer" element={<ProtectedRoute allowedRole="lawyer"><AppLayout /></ProtectedRoute>}>
           <Route index element={<LawyerDashboard />} />
           <Route path="cases" element={<Cases />} />
-          <Route path="cases/:id" element={<Placeholder title="Case Details" />} />
-          <Route path="schedule" element={<Placeholder title="Schedule" desc="Manage your availability and appointments" />} />
+          <Route path="cases/:id" element={<CaseDetail />} />
+          <Route path="schedule" element={<Schedule />} />
           <Route path="messages" element={<Messages />} />
           <Route path="earnings" element={<Earnings />} />
-          <Route path="profile" element={<Placeholder title="My Profile" desc="Update your profile, specializations and bio" />} />
-          <Route path="notifications" element={<Placeholder title="Notifications" />} />
+          <Route path="profile" element={<LawyerProfile />} />
+          <Route path="notifications" element={<Notifications />} />
           <Route path="settings" element={<Placeholder title="Settings" />} />
         </Route>
 
@@ -88,8 +96,8 @@ export default function App() {
           <Route path="payments" element={<AdminPayments />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="content" element={<AdminContent />} />
-          <Route path="notifications" element={<Placeholder title="Admin Notifications" />} />
-          <Route path="settings" element={<Placeholder title="Platform Settings" desc="OAuth, API keys, NAICOM config, email/SMS" />} />
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="settings" element={<AdminSettings />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
