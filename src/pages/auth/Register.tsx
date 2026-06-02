@@ -126,7 +126,7 @@ export default function Register() {
                       <option value="">Select Primary Specialization</option>
                       {['Housing & Tenancy', 'Divorce & Family', 'Employment & Labour', 'Criminal Defense', 'Corporate & IP', 'Law Enforcement'].map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
-                    <textarea placeholder="Brief professional bio..." rows={3} className="input-field resize-none" />
+                    <textarea placeholder="Brief professional bio..." rows={3} value={form.bio} onChange={e => update('bio', e.target.value)} className="input-field resize-none" />
                   </>
                 ) : (
                   <>
