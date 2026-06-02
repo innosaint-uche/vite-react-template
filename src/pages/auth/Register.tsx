@@ -130,7 +130,7 @@ export default function Register() {
                   </>
                 ) : (
                   <>
-                    <select className="input-field" required>
+                    <select value={form.stateOfResidence} onChange={e => update('stateOfResidence', e.target.value)} className="input-field" required>
                       <option value="">State of residence</option>
                       {['Lagos', 'Abuja (FCT)', 'Ogun', 'Oyo', 'Rivers', 'Delta'].map(s => <option key={s}>{s}</option>)}
                     </select>
