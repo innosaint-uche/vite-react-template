@@ -135,7 +135,7 @@ export default function Register() {
                       {['Lagos', 'Abuja (FCT)', 'Ogun', 'Oyo', 'Rivers', 'Delta'].map(s => <option key={s}>{s}</option>)}
                     </select>
                     <div className="flex items-start gap-3">
-                      <input type="checkbox" id="agree" className="mt-0.5" required />
+                      <input type="checkbox" id="agree" checked={form.agree} onChange={e => update('agree', e.target.checked)} className="mt-0.5" required />
                       <label htmlFor="agree" className="text-xs text-legali-gray leading-relaxed">
                         I agree to Legali's <a href="#" className="text-legali-orange hover:underline">Terms of Service</a> and <a href="#" className="text-legali-orange hover:underline">Privacy Policy</a>. I understand my data is protected.
                       </label>
