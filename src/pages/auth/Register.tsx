@@ -15,7 +15,7 @@ export default function Register() {
   const { login } = useAuthStore();
   const navigate = useNavigate();
 
-  const update = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
+  const update = (k: string, v: string | boolean) => setForm(f => ({ ...f, [k]: v }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
