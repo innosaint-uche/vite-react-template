@@ -11,7 +11,7 @@ export default function Register() {
   const [step, setStep] = useState(1);
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', password: '', barNumber: '', specialization: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', password: '', barNumber: '', specialization: '', bio: '', stateOfResidence: '', agree: false });
   const { login } = useAuthStore();
   const navigate = useNavigate();
 

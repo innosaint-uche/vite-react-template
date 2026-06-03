@@ -12,14 +12,20 @@ const demoMessages = [
 
 export default function Messages() {
   const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState(demoMessages);
   const activeCases = mockCases.filter(c => ['assigned', 'in_progress'].includes(c.status) && c.lawyerName);
+
+  const handleSend = () => {
+    if (!message.trim()) return;
+    setMessages(prev => [...prev, { id: Date.now().toString(), sender: 'You', role: 'customer', content: message, time: new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }), mine: true }]);
+    setMessage('');
+  };
 
   return (
     <div className="flex flex-col gap-6">
       <h1 className="page-header">Messages</h1>
 
       <div className="grid lg:grid-cols-3 gap-4 h-[600px]">
-        {/* Conversation list */}
         <div className="card p-0 overflow-hidden flex flex-col">
           <div className="p-4 border-b border-legali-border">
             <p className="font-semibold text-legali-dark">Conversations</p>
@@ -40,9 +46,7 @@ export default function Messages() {
           </div>
         </div>
 
-        {/* Chat window */}
         <div className="lg:col-span-2 card p-0 overflow-hidden flex flex-col">
-          {/* Chat header */}
           <div className="flex items-center justify-between p-4 border-b border-legali-border">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl gradient-orange flex items-center justify-center text-white font-bold text-sm">A</div>
@@ -57,7 +61,6 @@ export default function Messages() {
             </div>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
             {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.mine ? 'justify-end' : 'justify-start'}`}>
@@ -72,7 +75,6 @@ export default function Messages() {
             ))}
           </div>
 
-          {/* Input */}
           <div className="p-4 border-t border-legali-border flex items-center gap-2">
             <button className="w-9 h-9 rounded-xl hover:bg-legali-light flex items-center justify-center text-legali-gray"><Paperclip size={16} /></button>
             <input value={message} onChange={e => setMessage(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSend()} placeholder="Type a message..." className="input-field flex-1 py-2.5 text-sm" />
