@@ -75,8 +75,8 @@ export default function Messages() {
           {/* Input */}
           <div className="p-4 border-t border-legali-border flex items-center gap-2">
             <button className="w-9 h-9 rounded-xl hover:bg-legali-light flex items-center justify-center text-legali-gray"><Paperclip size={16} /></button>
-            <input value={message} onChange={e => setMessage(e.target.value)} onKeyDown={e => e.key === 'Enter' && message && setMessage('')} placeholder="Type a message..." className="input-field flex-1 py-2.5 text-sm" />
-            <button onClick={() => setMessage('')} disabled={!message} className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${message ? 'gradient-orange text-white' : 'bg-legali-border text-legali-gray'}`}>
+            <input value={message} onChange={e => setMessage(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSend()} placeholder="Type a message..." className="input-field flex-1 py-2.5 text-sm" />
+            <button onClick={handleSend} disabled={!message.trim()} className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${message.trim() ? 'gradient-orange text-white' : 'bg-legali-border text-legali-gray'}`}>
               <Send size={15} />
             </button>
           </div>
