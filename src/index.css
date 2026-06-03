@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans text-legali-dark antialiased;
+    background-color: #ffffff;
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 { @apply font-display; }
+  #root { width: 100%; max-width: 100%; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-legali-orange text-white font-semibold px-6 py-3 rounded-xl hover:bg-legali-orange-dark transition-all duration-200 shadow-legali hover:shadow-legali-lg active:scale-95 inline-flex items-center gap-2 cursor-pointer;
+  }
+  .btn-secondary {
+    @apply bg-white text-legali-orange font-semibold px-6 py-3 rounded-xl border-2 border-legali-orange hover:bg-legali-light transition-all duration-200 active:scale-95 inline-flex items-center gap-2 cursor-pointer;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-legali-dark font-medium px-4 py-2.5 rounded-xl hover:bg-legali-light transition-all duration-200 active:scale-95 inline-flex items-center gap-2 cursor-pointer;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-red-700 transition-all duration-200 active:scale-95 inline-flex items-center gap-2 cursor-pointer;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-legali-border p-6;
+  }
+  .card-hover {
+    @apply bg-white rounded-2xl shadow-card border border-legali-border p-6 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border border-legali-border rounded-xl text-legali-dark placeholder-legali-gray-light focus:outline-none focus:ring-2 focus:ring-legali-orange/30 focus:border-legali-orange transition-all duration-200 bg-white text-sm;
+  }
+  .badge-orange { @apply bg-legali-orange/10 text-legali-orange text-xs font-semibold px-3 py-1 rounded-full; }
+  .badge-green { @apply bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full; }
+  .badge-yellow { @apply bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full; }
+  .badge-red { @apply bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full; }
+  .badge-blue { @apply bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full; }
+  .badge-gray { @apply bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full; }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-legali-gray font-medium hover:bg-legali-orange/10 hover:text-legali-orange transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-link-active {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl bg-legali-orange text-white font-semibold shadow-legali cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .gradient-orange { background: linear-gradient(135deg, #E05A00 0%, #FF7A1A 100%); }
+  .gradient-dark { background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%); }
+  .gradient-hero { background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 55%, #3D1F08 100%); }
+  .text-gradient { background: linear-gradient(135deg, #E05A00, #FF7A1A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f8f4f0; }
+::-webkit-scrollbar-thumb { background: #E05A00; border-radius: 3px; }
