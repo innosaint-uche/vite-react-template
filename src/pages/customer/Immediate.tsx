@@ -114,7 +114,7 @@ export default function Immediate() {
                   <p className="text-legali-orange font-black font-display text-lg">₦50,000</p>
                   <p className="text-xs text-legali-gray">per session</p>
                 </div>
-                <button onClick={() => book(lawyer)} disabled={!!selectedType === false} className="btn-primary py-2 px-4 text-sm">
+                <button onClick={() => book(lawyer)} disabled={!selectedType} className="btn-primary py-2 px-4 text-sm">
                   Book Now <ChevronRight size={14} />
                 </button>
               </div>
