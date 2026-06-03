@@ -59,7 +59,7 @@ export default function Messages() {
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
-            {demoMessages.map(msg => (
+            {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.mine ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[75%] ${msg.mine ? 'items-end' : 'items-start'} flex flex-col gap-1`}>
                   {!msg.mine && <span className="text-xs text-legali-gray px-1">{msg.sender}</span>}
